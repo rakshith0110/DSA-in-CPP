@@ -1,0 +1,163 @@
+C++ MCQs
+01. 
+#include <iostream>
+using namespace std;
+class Base {
+public:
+    virtual void print() { cout << "Base"; }
+};
+class Derived : public Base {
+public:
+    void print() override { cout << "Derived"; }
+};
+int main() {
+    Base* b = new Derived();
+    b->print();
+}
+A. Base			B. Derived
+C. Compile error	D. Runtime error
+
+
+Q2
+#include <iostream>
+using namespace std;
+int main() {
+    int x = 5;
+    cout << (++x) * (x++);
+}
+A. 36		B. 30
+C. 35		D. Undefined behavior
+
+
+#include <iostream>
+using namespace std;
+void func(int x = 10, int y = 20) {
+    cout << x + y;
+}
+int main() {
+    func(5);
+}
+
+A. 25
+B. 30
+C. 15
+D. Compile error
+
+
+Q4: Size of the object
+class A {
+    int a;
+    static int b;
+    char c;
+};
+A. 5
+B. 8
+C. 4
+D. 1
+
+int a;
+Size of int is typically 4 bytes.
+static int b;
+Static members are not part of the object’s size.
+They are shared across all instances and stored separately in class scope.
+So, this doesn't contribute to the size of an object of class A.
+char c;
+Size of char is 1 byte.
+Due to alignment and padding rules, it won’t just take 1 byte after an int.
+
+Static members do not affect object size.
+Padding is added due to memory alignment.
+Hence, object size is 8 bytes, not 5 or 4.
+
+
+Q5:
+#include <iostream>
+using namespace std;
+int main() {
+    string str = "Hello";
+    str[0] = str.at(0) + 1;
+    cout << str;
+}
+
+A. Iello
+B. Gello
+C. Hello
+D. Error
+
+
+Q6:
+#include <iostream>
+using namespace std;
+int main() {
+    int a = 10;
+    auto lambda = [&]() { return a += 5; };
+    cout << lambda();
+}
+A. 10
+B. 5
+C. 15
+D. Compile error
+
+
+Q7:
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() {
+    vector<int> v = {1, 2, 3};
+    v.push_back(4);
+    for (auto x : v)
+        cout << x << " ";
+}
+A. 1 2 3
+B. 1 2 3 4
+C. 4 3 2 1
+D. Error
+
+vector<int> v = {1, 2, 3};
+A vector v is initialized with the elements 1, 2, and 3.
+
+v.push_back(4);
+Adds the value 4 at the end of the vector.
+
+Now the vector becomes: {1, 2, 3, 4}.
+
+for (auto x : v)
+This is a range-based for loop, introduced in C++11.
+
+It iterates over each element in the vector v, storing each one in x during the loop.
+
+cout << x << " ";
+Prints each value followed by a space.
+1 2 3 4
+
+
+Q8:
+#include <iostream>
+using namespace std;
+int main() {
+    int a = 5;
+    int &ref = a;
+    ref++;
+    cout << a;
+}
+A. 5
+B. 6
+C. Garbage
+D. Compile error
+
+
+Q9:
+cout << setw(10) << 100;
+A. <iomanip>
+B. <iostream>
+C. <stdlib.h>
+D. <string>
+
+
+Q10:
+10. Which of these supports runtime polymorphism?
+A. Function overloading
+B. Function overriding
+C. Templates
+D. Operator overloading

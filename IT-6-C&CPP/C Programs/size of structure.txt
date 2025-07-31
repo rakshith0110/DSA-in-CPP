@@ -1,0 +1,34 @@
+#include<stdio.h>
+void  main()
+{
+    struct student
+    {
+        int marks;
+        int rollnum;
+        char name[20];
+    };
+
+struct student s1;
+
+printf("Size of structure s1 = %ld \n",sizeof(s1));
+
+}
+
+
+
+#include<stdio.h>
+void  main()
+{
+    union student
+    {
+        int mraks;
+        int rollnum;
+        char name[20];
+    };
+
+union student s1;
+
+printf("Size of structure s1 = %ld \n",sizeof(s1));
+
+}
+

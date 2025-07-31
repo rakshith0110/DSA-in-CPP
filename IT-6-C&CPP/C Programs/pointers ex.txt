@@ -1,0 +1,220 @@
+#include<stdio.h>
+void main()
+{
+        int num=50;
+        int *ptr;
+
+        ptr=&num;
+        printf("\nValue of num = %d",num);
+        printf("\nValue of num = %d",*ptr);
+        printf("\nAddress of num = %d",&num);
+        printf("\nAddress of num = %d",ptr);
+
+}
+
+
+
+
+
+
+
+#include<stdio.h>
+void main()
+{
+        int num=50;
+        char ch='A';
+        int *ptr;
+        char *cptr;
+        cptr=&ch;
+        printf("%d",&ch);
+        printf("%d",cptr);
+        printf("%c",ch);
+        printf("%c",*cptr);
+
+        ptr=&num;
+        printf("\nValue of num = %d",num);
+        printf("\nValue of num = %d",*ptr);
+        printf("\nAddress of num = %d",&num);
+        printf("\nAddress of num = %d",ptr);
+
+
+}
+
+Pointers are variable which can hold address of another variable.
+Pointer data type: Hold address of another variable of same data type.
+
+
+
+
+FUNCTIONS
+
+Library functions
+User defined functions
+
+#include<stdio.h>
+void subfun();
+void main()
+{
+	printf("\nMain function\n");
+	subfun();
+	printf("\nBack to main function \n");
+}
+
+void subfun()
+{
+	printf("\nInside sub function \n");
+}
+
+
+a. Write a program in C using functions to read two numbers in main function.
+b. Find their sum in calling function.
+c. Print the result / sum in calling funciton.
+
+
+#include<stdio.h>
+void addnum(int c,int d);
+void main()
+{
+	int a, b;
+	printf("\nEnter two numbers \n");
+	scanf("%d %d",&a,&b);
+	
+	addnum(a,b);
+}
+void addnum(int c, int d)
+{
+	int sum;
+	sum=c+d;
+	printf("\nSum = %d",sum);
+}
+
+
+a. Write a program in C using functions to read two numbers in main function.
+b. Find their sum in calling function.
+c. Print the result main funciton.
+
+#include<stdio.h>
+int addnum(int c,int d);
+void main()
+{
+	int a, b, total;
+	printf("\nEnter two numbers \n");
+	scanf("%d %d",&a,&b);
+	
+	total = addnum(a,b);
+	printf("\nSum = %d",total);
+}
+int addnum(int c, int d)
+{
+	int sum;
+	sum=c+d;
+	return sum;
+}
+
+
+a. Write a program in C using functions to read two numbers in calling function.
+b. Find their sum in calling function.
+c. Print the result in main funciton.
+
+#include<stdio.h>
+int addnum();
+void main()
+{
+	int sum;
+	sum=addnum();
+	printf("\nSum = %d",sum);
+}
+int addnum()
+{
+	int a, b, total;
+	printf("\nEnter two numbers \n");
+	scanf("%d %d",&a,&b);
+	total = a+b;
+	return total;
+}
+
+
+a. Write a program in C using functions to read two numbers in calling function.
+b. Find their sum in calling function.
+c. Print the result in calling funciton.
+
+#include<stdio.h>
+void addnum();
+void main()
+{
+	addnum();
+}
+void addnum()
+{
+	int a, b, total;
+	printf("\nEnter two numbers \n");
+	scanf("%d %d",&a,&b);
+	total = a+b;
+	printf("\nSum = %d",total);
+}
+
+
+1. Function with argument and no return valuue.
+2. Function with argument and return value.
+3. Function with no argument and return value.
+4. Function with no argument and no return value.
+
+
+Call by value 
+Call by reference
+
+
+Local / Auto variable
+Global variable
+
+#include<stdio.h>
+void subfun();
+int gvar;
+void main()
+{
+	int mvar;
+	gvar=10;
+	mvar=20;
+	printf("\nValue of gvar = %d and mvar = %d",gvar, mvar);
+	subfun();
+	printf("\nValue of gvar = %d and mvar = %d",gvar, mvar);
+}
+void subfun()
+{
+	int mvar;
+	mvar=50;
+	gvar=gvar+5;
+	printf("\nValue of gvar = %d and mvar = %d",gvar, mvar);
+}
+
+
+Static variable
+#include<stdio.h>
+void subfun();
+void main()
+{
+	int i;	
+	for(i=0;i<5;i++)
+	subfun();
+}
+void subfun()
+{
+	static int svar=50;
+	int nvar=50;
+	printf("\nValue of svar = %d\t nvar = %d",svar,nvar);
+	svar++;
+	nvar++;
+}
+
+
+Structures
+
+
+
+
+
+
+
+
+
+

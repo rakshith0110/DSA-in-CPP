@@ -1,0 +1,25 @@
+#include <stdio.h>
+// Pointer to a structure
+struct student 
+{
+    int roll_no;	//4
+    int marks;		//4
+};
+int main()
+{
+    struct student s1;
+    struct student *p;
+    p=&s1;
+    p->roll_no = 55;	//s1.roll_no
+    p->marks = 75;	//s1.marks
+  
+    printf("The value at roll number is %d\n", p->roll_no);
+    printf("The value at marks is %d\n", p->marks); 
+    return 0;
+}
+
+
+
+
+
+

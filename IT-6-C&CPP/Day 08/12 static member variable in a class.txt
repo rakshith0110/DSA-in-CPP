@@ -1,0 +1,54 @@
+// static member variable
+
+#include<iostream>
+using namespace std;
+
+class gamma
+{
+    private:
+    static int count;
+    int id;
+    
+    public:
+    gamma()
+    {
+        count++;
+        id = count;
+    }
+    void showcount()
+    {
+        cout<<"Count is "<<count<<endl;
+    }
+    void showid()
+    {
+        cout<<"Id number is "<<id<<endl;
+    }
+};
+
+int gamma::count=0;
+
+int main()
+{
+    gamma g1;
+    g1.showcount();
+    
+    gamma g2;
+    g2.showcount();
+    
+    gamma g3;
+    g3.showcount();
+    
+    
+    g1.showcount();
+    g2.showcount();
+    g3.showcount();
+    
+    g1.showid();
+    g2.showid();
+    g3.showid();
+    
+}
+
+
+
+

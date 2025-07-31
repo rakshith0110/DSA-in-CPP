@@ -1,0 +1,147 @@
+1. Which of the following is not an OOP principle in C++?
+a) Inheritance
+b) Polymorphism
+c) Compilation
+d) Encapsulation
+
+
+2. What is the primary purpose of a constructor in a class?
+a) To construct the class
+b) To initialize the class’s objects
+c) To destroy the class’s objects
+d) None of the above
+
+
+3. How many types of inheritance does C++ support?
+a) 1
+b) 3
+c) 5
+d) 7
+
+
+4. Which keyword is used to prevent overriding in derived classes?
+a) override
+b) virtual
+c) final
+d) abstract
+
+
+5. Which of the following is not a type of constructor?
+a) Default constructor
+b) Copy constructor
+c) Multi constructor
+d) Parameterized constructor
+
+
+6. Which of the following concepts hides the internal data from outside access?
+a) Abstraction
+b) Encapsulation
+c) Polymorphism
+d) Inheritance
+
+
+7. What is an abstract class?
+a) A class that can be instantiated
+b) A class with at least one pure virtual function
+c) A class without any members
+d) A class with multiple inheritance
+
+8. Which keyword is used to declare a pure virtual function?
+a) abstract
+b) virtual
+c) pure
+d) virtual… = 0
+
+
+9. Which concept allows C++ to implement the “is-a” relationship?
+a) Composition
+b) Encapsulation
+c) Inheritance
+d) Polymorphism
+
+
+10. What is the base class in C++ from which all other classes implicitly inherit?
+a) Object
+b) Base
+c) Main
+d) None of the above
+
+
+11. Which function cannot be overloaded in C++?
+a) Main function
+b) Constructor
+c) Destructor
+d) Virtual functions
+
+
+12. What does the :: operator represent in C++?
+a) Scope resolution operator
+b) Conditional operator
+c) Bitwise operator
+d) Shift operator
+
+
+
+13. What is the default access specifier for members of a class?
+a) public
+b) private
+c) protected
+d) None of the above
+
+
+
+14. Which keyword is used for dynamic polymorphism?
+a) dynamic
+b) polymorph
+c) virtual
+d) override
+
+
+
+15. Which of the following is correct about the destructor?
+a) It is used to initialize the object
+b) It has a return type
+c) It cannot have parameters
+d) It is invoked automatically when the object goes out of scope
+
+
+
+16. Which of the following cannot be static in a class?
+a) Variables
+b) Methods
+c) Constructors
+d) Destructors
+
+
+
+17. Which of the following is a mechanism of reusing code in C++?
+a) Copy-Pasting
+b) Linking
+c) Inheritance
+d) Instantiation
+
+
+
+18. What is the process by which one class can acquire the properties and behaviors of another class?
+a) Polymorphism
+b) Abstraction
+c) Inheritance
+d) Encapsulation
+
+
+
+19. Which keyword is used to prevent a class from being inherited?
+a) private
+b) protected
+c) sealed
+d) final
+
+
+
+20. When is the memory for a class’s member variables allocated?
+a) At compile time
+b) When the object is declared
+c) When the object is used
+d) When the class is defined
+
+

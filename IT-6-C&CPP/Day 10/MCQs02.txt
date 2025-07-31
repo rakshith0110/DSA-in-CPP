@@ -1,0 +1,357 @@
+1. What will be the output of this code?
+#include<iostream>
+using namespace std;
+int main() {
+    int x = 10;
+    cout << x++ << " " << ++x;
+    return 0;
+}
+A. 10 11
+B. 10 12
+C. 11 12
+D. 11 11
+
+
+2. Which of the following is the correct way to declare a pointer?
+int x = 5;
+A. int* ptr = x;
+B. int ptr = &x;
+C. int* ptr = &x;
+D. ptr int = &x;
+
+
+3. What does the following code print?
+#include<iostream>
+using namespace std;
+int main() {
+    char a = 'A';
+    cout << int(a);
+}
+A. A
+B. 65
+C. Error
+D. Garbage value
+
+4. What is the output of this code snippet?
+#include<iostream>
+using namespace std;
+void fun(int x = 10) {
+    cout << x;
+}
+int main() {
+    fun();
+    return 0;
+}
+A. 0
+B. 10
+C. Garbage value
+D. Compile-time error
+
+
+5. What is the output of this code?
+#include<iostream>
+using namespace std;
+int main() {
+    int arr[] = {1, 2, 3, 4};
+    cout << *(arr + 2);
+}
+A. 1
+B. 2
+C. 3
+D. 4
+
+
+6. What does the following snippet do?
+#include<iostream>
+using namespace std;
+int main() {
+    int x = 5;
+
+int& ref = x;
+    ref = 10;
+    cout << x;
+}
+A. 5
+B. 10
+C. 0
+D. Error
+
+
+7. Which keyword is used to define a constant in C++?
+A. final
+B. const
+C. immutable
+D. static
+
+
+8. What will be the output?
+#include<iostream>
+using namespace std;
+int main() {
+    string s = "Hello";
+    s += " World";
+    cout << s;
+}
+A. HelloWorld
+B. Hello World
+C. Error
+D. Hello
+
+
+9. What is the size of the following structure?
+struct Point {
+    int x;
+    char y;
+};
+A. 5
+B. 8 (due to padding)
+C. 4
+D. 1
+
+
+10. What does this code do?
+#include<iostream>
+using namespace std;
+class Base {
+public:
+    virtual void print() {
+        cout << "Base";
+    }
+};
+class Derived : public Base {
+public:
+    void print() {
+        cout << "Derived";
+    }
+};
+int main() {
+    Base* b = new Derived();
+    b->print();
+}
+A. Base
+B. Derived
+C. Compile Error
+D. Runtime Error
+
+
+
+11. What will this print?
+#include<iostream>
+using namespace std;
+int main() {
+    cout << sizeof("Hello");
+}
+A. 5
+B. 6
+C. 4
+D. 7
+
+
+12. What happens if you delete a pointer twice?
+A. Memory leak
+B. Compilation error
+C. Runtime error (undefined behavior)
+D. Nothing happens
+
+
+13. Which of the following is correct to define a template function?
+A. template<typename T> T max(T a, T b)
+B. template<class T> max(T a, T b)
+C. template T max(T a, T b)
+D. generic T max(T a, T b)
+
+
+14. What is the output?
+int a = 10;
+int b = 20;
+cout << (a & b);
+A. 10
+B. 20
+C. 0
+D. 0x0008 (8)
+
+
+1000	8
+
+
+#include<iostream>
+using namespace std;
+int main() {
+    cout << 10 / 3;
+}
+A. 3
+B. 3.33
+C. 3.0
+D. Error
+
+
+
+17. What does new return if it fails?
+A. NULL
+B. Throws bad_alloc
+C. -1
+D. Garbage address
+
+
+18. What is wrong with this code?
+#include<iostream>
+using namespace std;
+int main() {
+    int* ptr = new int[5];
+    delete ptr;
+}
+A. No error
+B. Should use delete[]
+C. Memory leak
+D. Syntax error
+
+
+
+
+19. What is the output?
+#include<iostream>
+using namespace std;
+int main() {
+    int x = 3;
+    int y = 3;
+    cout << (x == y ? "Equal" : "Not Equal");
+}
+A. Equal
+B. Not Equal
+C. True
+D. False
+
+
+20. What is the output?
+#include<iostream>
+using namespace std;
+int main() {
+    int a = 1;
+    switch (a) {
+        case 1:
+            cout << "One";
+        case 2:
+            cout << "Two";
+    }
+}
+A. One
+B. OneTwo
+C. Error
+D. Two
+
+
+What is true about the following code?
+class A {
+    A() {}
+};
+int main() {
+    A obj;
+}
+A. Compiles and runs
+B. Compilation error due to private constructor
+C. Runtime error
+D. Constructor must have return type
+
+
+
+What will this program output?
+#include<iostream>
+using namespace std;
+class A {
+public:
+    A() { cout << "A"; }
+    ~A() { cout << "B"; }
+};
+int main() {
+    A obj;
+}
+A. A
+B. AB
+C. BA
+D. Error
+
+
+What does this code output?
+#include<iostream>
+using namespace std;
+int main() {
+    string str = "abc";
+    str[0] = 'z';
+    cout << str;
+}
+A. abc
+B. zbc
+C. Compilation error
+D. Runtime error
+
+
+
+5. What is the output of the following code?
+#include<iostream>
+using namespace std;
+int main() {
+    int a = 3;
+    int b = 5;
+    cout << (a ^ b);
+}
+A. 6
+B. 7
+C. 1
+D. 2
+
+
+
+	011	101	110	6
+
+
+What happens here?
+#include<iostream>
+using namespace std;
+class Test {
+public:
+    static int x;
+};
+int Test::x = 10;
+int main() {
+    Test obj1, obj2;
+    cout << obj1.x << " " << obj2.x;
+}
+A. 10 10
+B. 10 0
+C. Error
+D. 0 0
+
+
+Which of the following is true about virtual destructors?
+A. They’re needed only if base class has a pointer
+B. Prevent memory leak when deleting derived object via base pointer
+C. Not allowed in C++
+D. Required in every class
+
+
+
+What is the effect of delete this; inside a class method?
+A. Deletes the object calling the method
+B. Deletes the entire class
+C. Causes segmentation fault
+D. Compilation error
+
+
+
+What is the output of this STL code?
+#include<iostream>
+#include<map>
+using namespace std;
+int main() {
+    map<int, int> m;
+    m[1] = 100;
+    m[2] = 200;
+    cout << m.size();
+}
+A. 1
+B. 2
+C. 0
+D. Error
+
+
+

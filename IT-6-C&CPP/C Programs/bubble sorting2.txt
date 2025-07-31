@@ -1,0 +1,72 @@
+72	54	26	26	06
+54	26	45	06	26
+26	45	06	45	45
+45	06	54	54	54
+06	72	72	72	72
+
+//Bubble sorting C++
+#include<iostream>
+int main()
+{
+    int arr[100];
+    int i,j,temp, n;
+    cout<<"Enter the size of array ";
+    cin>>n;
+    cout<<"Enter "<< n <<" numbers "<<endl;
+    for(i=0;i<n;i++)
+      cin>>&arr[i];
+
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n-1;j++)
+        {
+            if(arr[j]>arr[j+1])
+            {
+                temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
+    cout<<"Sorted elements are "<<endl;
+    for(i=0;i<n;i++)
+      cout<<arr[i]<<endl;
+}
+
+
+72	54	26	26	06
+54	26	45	06	26
+26	45	06	45	45
+45	06	54	54	54
+06	72	72	72	72
+
+//Bubble sorting C
+
+
+#include<stdio.h>
+void main()
+{
+    int arr[100];
+    int i,j,temp, n;
+    printf("Enter the size of array \t");
+    scanf("%d",&n);
+    printf("\nEnter %d numbers \n",n);
+    for(i=0;i<n;i++)
+      scanf("%d",&arr[i]);
+
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n-1;j++)
+        {
+            if(arr[j]>arr[j+1])
+            {
+                temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
+    printf("\nSorted elements are \n");
+    for(i=0;i<n;i++)
+    printf("\n%d",arr[i]);
+}

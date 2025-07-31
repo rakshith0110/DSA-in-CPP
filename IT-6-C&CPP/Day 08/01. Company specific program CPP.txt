@@ -1,0 +1,320 @@
+CPP
+Problem 01 
+Sonia is organising a sports event and needs to arrange the scores of participants. She writes a C++ program that allows her to sort the scores in ascending order for the first half and descending order for the remaining half, so she can display the rankings accordingly.
+
+Input Format
+Input consists of size and followed by elements.
+
+Output Format
+Print the array in required format.
+
+Sample Input
+8
+5 4 6 3 7 2 8 1
+Sample Output
+1 2 3 4 8 7 6 5
+
+
+Solution:
+#include<bits/stdc++.h>
+using namespace std;
+void ascDecFunc(int a[], int n)
+{
+    sort(a, a+n);
+    // printing first half in ascending order
+    for (int i = 0; i < n / 2; i++)
+      cout<<a[i]<<" "; 
+    // printing second half in descending order
+    for (int j = n - 1; j >= n / 2; j--)
+      cout<<a[j]<<" ";
+}
+int main()
+{
+int size;
+cin>>size;
+int arr[size];
+for(int i=0; i<size; i++)
+{
+  cin>>arr[i];
+}
+ ascDecFunc(arr, size);
+ return 0;
+}
+---------------------------------------
+
+Problem 02.
+Hari is a class teacher, he wants to collect the students' details. Please help him to complete the process by writing the code.
+Define a class Student with attributes name (string) and age (integer). Implement the following member functions:setData(string n, int a): Sets the name and age of the student.displayData(): Displays the name and age of the student.
+
+Write a main function to create an object of Student, input data from the user, and display thepy
+student's information.
+
+Input Format
+Input consists of two data types,
+First is the name & next is the age.
+Output Format
+Students name and age has to be displayed
+Sample Input
+Akshay
+19
+
+Sample Output
+
+Student Name: Akshay
+Student Age: 19
+
+
+Solution:
+#include <iostream>
+#include <string>
+using namespace std;
+class Student {
+private:
+string name;
+int age;
+public:
+// Member function to set the name and age of the student
+void setData(string n, int a) {
+name = n;
+age = a;
+}
+// Member function to display the student's information
+void displayData() {
+cout << "Student Name: " << name << endl;
+cout << "Student Age: " << age << endl;
+}
+};
+int main() {
+Student s;
+string studentName;
+int studentAge;
+
+// Input student's data from the user
+cout << "Enter student's name: ";
+getline(cin, studentName);
+cout << "Enter student's age: ";
+cin >> studentAge;
+// Set the student's data
+s.setData(studentName, studentAge);
+// Display the student's data
+s.displayData();
+return 0;
+}
+
+
+--------------------------
+
+03. 
+David and Emily are car enthusiasts who love collecting vintage cars. To keep track of their collection, David writes a C++ program where each car is represented as an object with details about its brand and manufacturing year. They can quickly input new cars and display their collection details at any time.
+Define a class Car with attributes brand (string) and year (integer). Implement the following member functions:
+
+Constructor to initialise brand and year.
+display Info(): Displays the brand and year of the car.
+
+Input Format
+Input consists of two data types,
+First is the brand name & next is the year.
+
+Output Format
+Students name and age has to be displayed
+
+Sample Input
+Compile time input
+
+Sample Output
+Car 1 Details:
+Car Brand: Ford Mustang
+Manufacturing Year: 1967
+
+Car 2 Details:
+Car Brand: Chevrolet Camaro
+Manufacturing Year: 1969
+
+
+Solution:
+#include <iostream>
+#include <string>
+using namespace std;
+class Car 
+{
+private:
+	string brand;
+	int year;
+public:
+// Constructor to initialise brand and year
+	Car(string b, int y) 
+	{
+	brand = b;
+	year = y;
+	}
+
+// Member function to display car information
+	void displayInfo() 
+	{
+	cout << "Car Brand: " << brand << endl;
+	cout << "Manufacturing Year: " << year << endl;
+	}
+};
+
+int main() {
+// Creating car objects using the constructor
+Car car1("Ford Mustang", 1967);
+Car car2("Chevrolet Camaro", 1969);
+// Displaying car details
+cout << "Car 1 Details:" << endl;
+car1.displayInfo();
+cout << "\nCar 2 Details:" << endl;
+car2.displayInfo();
+return 0;
+}
+
+-----------------------------------
+04.
+Mia just opened a new savings account with her local bank. To keep track of her transactions, she decided to write a simple C++ program to manage her account. The program helps her deposit money and ensures she maintains a minimum balance whenever she withdraws funds.
+Create a class “BankAccount” with fields “accountNumber”, “balance” and a method “deposit()” that adds an amount to the balance.
+Create a subclass “SavingsAccount” that extends “BankAccount” and adds a field “minimumBalance” and a method “withdraw()” that subtracts an amount from the balance. 
+
+Create an object of the “SavingsAccount” class and call the “deposit()” and “withdraw()” methods.
+
+
+Input Format
+Values for banking!
+
+Output Format
+Balance.
+
+Sample Input & Output:
+Enter the Account Number: 123456
+Enter the initial balance: 10000
+Enter the minimum balance: 5000
+
+Account Number: 123456
+Balance: ₹10000
+Enter the amount for deposit: 7500
+Deposited: ₹7500
+New balance: ₹17500
+
+Enter the amount to withdraw: 13000
+Withdrawal failed: Insufficient funds. Minimum balance must be maintained.
+
+Enter the amount to withdraw: 20000
+Withdrawal failed: Insufficient funds. Minimum balance must be maintained.
+
+
+Solution:
+#include <iostream>
+using namespace std;
+// Base class BankAccount
+class BankAccount
+{
+protected:
+	int accountNumber;
+	double balance;
+
+public:
+// Constructor to initialise account number and balance
+	BankAccount(int accNum, double bal) 
+	{
+	accountNumber = accNum;
+	balance = bal;
+	}
+// Method to deposit an amount to the balance
+	void deposit(double amount) 
+	{
+	balance += amount;
+	cout << "Deposited: ₹" << amount << endl;
+	cout << "New balance: ₹" << balance << endl;
+	}
+// Method to display the account details
+	void displayAccount() 
+	{
+	cout << "Account Number: " << accountNumber << endl;
+	cout << "Balance: ₹" << balance << endl;
+	}
+};
+
+// Subclass SavingsAccount extending BankAccount
+class SavingsAccount : public BankAccount 
+{
+private:
+	double minimumBalance;
+public:
+// Constructor to initialise account number, balance, and minimum balance
+	SavingsAccount(int accNum, double bal, double minBal)
+	: BankAccount(accNum, bal) 
+	{
+	minimumBalance = minBal;
+
+	}
+// Method to withdraw an amount, ensuring the balance doesn't drop below minimum
+void withdraw(double amount) 
+{
+	if (balance - amount < minimumBalance) 
+	{
+	cout << "Withdrawal failed: Insufficient funds. Minimum balance must be maintained." << endl;
+	} 
+	else 
+	{
+	balance -= amount;
+	cout << "Withdrew: ₹" << amount << endl;
+	cout << "New balance: ₹" << balance << endl;
+	}
+}
+};
+int main() 
+{
+// Create an object of the SavingsAccount class
+int accno; 
+double bal, min_bal, money;
+cout<<"Enter the Account Number: ";
+cin>>accno;
+cout<<"Enter the intitial balance: ";
+cin>>bal;
+cout<<"Enter the minimum balance: ";
+cin>>min_bal;
+
+SavingsAccount sa(accno, bal, min_bal);
+
+// Display account details
+sa.displayAccount();
+cout << endl;
+cout<<"Enter the amount for deposit: ";
+cin>>money;
+// Deposit some money
+sa.deposit(money);
+cout << endl;
+cout<<"Enter the amount to withdraw: ";
+cin>>money;
+// Try to withdraw money within the allowed limit
+sa.withdraw(money);
+cout << endl;
+cout<<"Enter the amount to withdraw: ";
+cin>>money;
+// Try to withdraw money that would bring balance below the minimum
+sa.withdraw(money);
+return 0;
+}
+
+----------------------------
+
+05. 
+Write a program to implement the following logic using inheritance.
+Create a parent class and implement the fun method. In the method, get the individual digits of the entered number, store it in an
+array, and find their sum.
+For example in case of 1234, the individual digits are 4,3,2,1 and the final sum → (4+3)+(4+2)+(4+1)+(3+2)+(3+1)+(2+1) = 30.
+
+Create the main class that inherits the parent class and call the fun method inside the parent function.
+
+Input Format
+The input consists of an integer.
+Output Format
+The output prints the final sum.
+Constraints
+Integers only.
+
+Sample Input
+1234
+Sample Output
+30
+
+

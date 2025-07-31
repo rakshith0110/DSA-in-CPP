@@ -1,0 +1,727 @@
+1. Right Half Pyramid Pattern
+In this pattern, stars are printed in a right-angled triangle format. The program uses two loops: the outer loop handles the number of rows, and the inner loop prints the stars in each row. The number of stars printed increases with each row. Below are the common steps that are being performed in this code.
+
+The user is asked to enter the number of rows.
+The outer loop (`for (i = 1; i <= rows; ++i)`) runs from 1 to the number of rows.
+The inner loop (`for (j = 1; j <= i; ++j)`) runs from 1 to the current row number, printing stars.
+C Program For Pattern – Right Half Pyramid Pattern
+
+#include <stdio.h>
+int main() {
+
+    int i, j, rows;
+
+    printf(“Enter the number of rows: “);
+
+    scanf(“%d”, &rows);
+
+    for (i = 1; i <= rows; ++i) {
+
+        for (j = 1; j <= i; ++j) {
+
+            printf(“* “);
+
+        }
+
+        printf(“\n”);
+
+    }
+
+    return 0;
+
+}
+
+Output- 
+Enter the number of rows: 5
+
+*
+
+* *
+
+* * *
+
+* * * *
+
+* * * * *
+
+----------------------------------
+
+2. Left Half Pyramid Pattern
+In this pattern, stars are aligned to the right, forming a right-angled triangle against the right margin. This is achieved by first printing spaces, then stars. Below are the common steps that are being performed in this code.
+
+The user is asked to enter the number of rows.
+The outer loop (`for (i = 1; i <= rows; ++i)`) runs from 1 to the number of rows.
+The first inner loop (`for (j = i; j < rows; ++j)`) prints spaces to align stars to the right.
+The second inner loop (`for (j = 1; j <= i; ++j)`) prints stars.
+C Program For Pattern – Left Hand Pyramid Pattern
+
+#include <stdio.h>
+int main() {
+
+    int i, j, rows;
+
+    printf(“Enter the number of rows: “);
+
+    scanf(“%d”, &rows);
+
+    for (i = 1; i <= rows; ++i) {
+
+        for (j = i; j < rows; ++j) {
+
+            printf(”  “);
+
+        }
+
+        for (j = 1; j <= i; ++j) {
+
+            printf(“* “);
+
+        }
+
+        printf(“\n”);
+
+    }  
+
+    return 0;
+
+}
+
+Output- 
+Enter the number of rows: 5
+
+        *
+
+      * *
+
+    * * *
+
+  * * * *
+
+* * * * *
+
+----------------------------------
+
+3. Full Pyramid Pattern
+The full pyramid pattern centers stars in a symmetrical triangle shape. The common steps involved in this process include-
+
+The user is asked to enter the number of rows.
+The outer loop (`for (i = 1; i <= rows; ++i)`) runs from 1 to the number of rows.
+The first inner loop (`for (j = i; j < rows; ++j)`) prints spaces to center the stars.
+The second inner loop (`for (j = 1; j <= (2 * i – 1); ++j)`) prints stars, forming a pyramid shape.
+C Program For Pattern – Full Pyramid Pattern
+
+#include <stdio.h>
+int main() {
+
+    int i, j, rows;
+
+    printf(“Enter the number of rows: “);
+
+    scanf(“%d”, &rows);
+
+    for (i = 1; i <= rows; ++i) {
+
+        for (j = i; j < rows; ++j) {
+
+            printf(”  “);
+
+        }
+
+        for (j = 1; j <= (2 * i – 1); ++j) {
+
+            printf(“* “);
+
+        }
+
+        printf(“\n”);
+
+    }  
+
+    return 0;
+
+}
+
+Output- 
+Enter the number of rows: 5
+
+        *
+
+      * * *
+
+    * * * * *
+
+  * * * * * * *
+
+* * * * * * * * *
+
+----------------------------------
+
+4. Inverted Right Half Pyramid Pattern
+In this pattern, the maximum number of stars is in the first row, and it decreases with each row. The common step by step process involved in this program is written below for your reference.
+
+The user is asked to enter the number of rows.
+The outer loop (`for (i = rows; i >= 1; –i)`) runs from the number of rows down to 1.
+The inner loop (`for (j = 1; j <= i; ++j)`) runs from 1 to the current row number, printing stars.
+C Program For Pattern – Inverted Right Half Pyramid
+
+#include <stdio.h>
+int main() {
+
+    int i, j, rows;
+
+    printf(“Enter the number of rows: “);
+
+    scanf(“%d”, &rows);
+
+    for (i = rows; i >= 1; –i) {
+
+        for (j = 1; j <= i; ++j) {
+
+            printf(“* “);
+
+        }
+
+        printf(“\n”);
+
+    }  
+
+    return 0;
+
+}
+
+Output-
+Enter the number of rows: 5
+
+* * * * *
+
+* * * *
+
+* * *
+
+* *
+
+*
+
+----------------------------------
+
+5. Inverted Left Half Pyramid Pattern
+This pattern aligns stars to the right margin, with spaces on the left. It starts with the maximum stars and decreases by one in each row. The common step by step process involved in this program is written below for your reference.
+
+The user is asked to enter the number of rows.
+The outer loop (`for (i = rows; i >= 1; –i)`) runs from the number of rows down to 1.
+The first inner loop (`for (j = i; j < rows; ++j)`) prints spaces to align stars to the right.
+The second inner loop (`for (j = 1; j <= i; ++j)`) prints stars.
+C Program For Pattern – Inverted Left Half Pyramid
+
+#include <stdio.h>
+int main() {
+
+    int i, j, rows;
+
+    printf(“Enter the number of rows: “);
+
+    scanf(“%d”, &rows);
+
+    for (i = rows; i >= 1; –i) {
+
+        for (j = i; j < rows; ++j) {
+
+            printf(”  “);
+
+        }
+
+        for (j = 1; j <= i; ++j) {
+
+            printf(“* “);
+
+        }
+
+        printf(“\n”);
+
+    }  
+
+    return 0;
+
+}
+
+Output- 
+Enter the number of rows: 5
+
+* * * * *
+
+  * * * *
+
+    * * *
+
+      * *
+
+        *
+
+6. Inverted Full Pyramid Pattern
+This program prints an inverted full pyramid pattern of stars, starting with the maximum number of stars at the top and decreasing the number of stars with each descending row. The pattern is symmetrical, with each row centered by spaces. The basic step-by-step process of this pattern is written below for your reference:
+
+Ask the user to enter the number of rows.
+Use an outer loop “for (i = rows; i >= 1; –i)” to iterate through the rows in descending order.
+Use the first inner loop “for (j = 0; j < rows – i; ++j)” to print spaces to align the stars centrally.
+Use the second inner loop to print stars for each row.
+C Program For Pattern – Inverted Full Pyramid Pattern
+
+#include <stdio.h>
+int main() {
+
+    int i, j, rows;
+
+    printf(“Enter the number of rows: “);
+
+    scanf(“%d”, &rows);
+
+    for (i = rows; i >= 1; –i) {
+
+        for (j = 0; j < rows – i; ++j) {
+
+            printf(”  “);
+
+        }
+
+        for (j = 1; j <= (2 * i – 1); ++j) {
+
+            printf(“* “);
+
+        }
+
+        printf(“\n”);
+
+    }
+
+    return 0;
+
+}
+
+Output- 
+Enter the number of rows: 5
+
+* * * * * * * * *
+
+  * * * * * * *
+
+    * * * * *
+
+      * * *
+
+        *
+
+7. Rhombus Pattern
+This program prints a rhombus pattern of stars, where each side of the rhombus has an equal number of stars. The pattern is symmetric, with spaces used to align the stars correctly. The basic step-by-step process of this pattern is written below for your better :
+
+Ask the user to enter the number of rows.
+Use an outer loop “ for (i = 1; i <= rows; ++i)” to iterate through the rows.
+Use the first inner loop “ for (j = i; j < rows; ++j)” to print spaces for alignment.
+Use the second inner loop “for (j = 1; j <= rows; ++j)” to print stars for each row.
+C Program For Pattern – Rhombus Pattern
+
+#include <stdio.h>
+int main() {
+
+    int i, j, rows;
+
+    printf(“Enter the number of rows: “);
+
+    scanf(“%d”, &rows);
+
+    for (i = 1; i <= rows; ++i) {
+
+        for (j = i; j < rows; ++j) {
+
+            printf(”  “);
+
+        }
+
+        for (j = 1; j <= rows; ++j) {
+
+            printf(“* “);
+
+        }
+
+        printf(“\n”);
+
+    }
+
+    return 0;
+
+}
+
+Output- 
+Enter the number of rows: 5
+
+        * * * * *
+
+      * * * * *
+
+    * * * * *
+
+  * * * * *
+
+* * * * *
+
+8. Diamond Pattern
+This program prints a diamond pattern of stars. The diamond is symmetrical and centered, with an upper half that resembles a pyramid and a lower half that resembles an inverted pyramid. The basic step-by-step process of printing this pattern is written below for your better understanding:
+
+Ask the user to enter the number of rows.
+Use an outer loop to print the upper half of the diamond.
+Use the first inner loop to print spaces and the second inner loop to print stars.
+Use another outer loop to print the lower half of the diamond, following a similar logic.
+C Program For Pattern – Diamond Pattern
+
+#include <stdio.h>
+int main() {
+
+    int i, j, rows;
+
+    printf(“Enter the number of rows: “);
+
+    scanf(“%d”, &rows);
+
+//for printing the upper half of the diamond
+
+    for (i = 1; i <= rows; ++i) {
+
+        for (j = i; j < rows; ++j) {
+
+            printf(”  “);
+
+        }
+
+        for (j = 1; j <= (2 * i – 1); ++j) {
+
+            printf(“* “);
+
+        }
+
+        printf(“\n”);
+
+    }
+
+// For printing the lower half of the diamond
+
+    for (i = rows – 1; i >= 1; –i) {
+
+        for (j = rows; j > i; –j) {
+
+            printf(”  “);
+
+        }
+
+        for (j = 1; j <= (2 * i – 1); ++j) {
+
+            printf(“* “);
+
+        }
+
+        printf(“\n”);
+
+    }
+
+    return 0;
+
+}
+
+Output-
+Enter the number of rows: 5
+
+        *
+
+      * * *
+
+    * * * * *
+
+  * * * * * * *
+
+* * * * * * * * *
+
+  * * * * * * *
+
+    * * * * *
+
+      * * *
+
+        *
+
+----------------------------------
+
+9. Hourglass Pattern
+This program prints an hourglass pattern of stars. The pattern consists of an inverted full pyramid on top followed by a full pyramid at the bottom.
+
+The basic step-by-step process of this pattern is written below for your reference:
+
+Ask the user to enter the number of rows.
+Use an outer loop to print the top inverted full pyramid.
+Use the first inner loop to print spaces and the second inner loop to print stars.
+Use another outer loop to print the bottom full pyramid, following a similar logic.
+C Program For Pattern – Hourglass Pattern
+
+#include <stdio.h>
+int main() {
+
+    int i, j, rows;
+
+    printf(“Enter the number of rows: “);
+
+    scanf(“%d”, &rows);
+
+// for printing upper inverted pyramid
+
+    for (i = rows; i >= 1; –i) {
+
+        for (j = 0; j < rows – i; ++j) {
+
+            printf(”  “);
+
+        }
+
+        for (j = 1; j <= (2 * i – 1); ++j) {
+
+            printf(“* “);
+
+        }
+
+        printf(“\n”);
+
+    }
+
+// for printing lower pyramid
+
+    for (i = 2; i <= rows; ++i) {      
+
+//iteration from second row as the first row is taken from the inverted pyramid.
+
+        for (j = i; j < rows; ++j) {
+
+            printf(”  “);
+
+        }
+
+        for (j = 1; j <= (2 * i – 1); ++j) {
+
+            printf(“* “);
+
+        }
+
+        printf(“\n”);
+
+    }
+
+   return 0;
+
+}
+
+Output- 
+Enter the number of rows: 5
+
+* * * * * * * * *
+
+  * * * * * * *
+
+    * * * * *
+
+      * * *
+
+        *
+
+      * *
+
+    * * * * *
+
+  * * * * * * *
+
+* * * * * * * * *
+
+
+----------------------------------
+
+10. Hollow Square Pattern
+This program prints a hollow square pattern of stars. Only the border of the square is filled with stars, leaving the inside hollow. The basic step-by-step process of this pattern is written below for your reference:
+
+Ask the user to enter the size of the square.
+Use an outer loop to iterate through the rows.
+Use an inner loop to print stars on the border and spaces inside the square.
+C Program For Pattern – Hollow Square Pattern
+#include <stdio.h>
+int main() {
+
+    int i, j, size;
+
+    printf(“Enter the size of the square: “);
+
+    scanf(“%d”, &size);
+
+    for (i = 1; i <= size; ++i) {
+
+        for (j = 1; j <= size; ++j) {
+
+            if (i == 1 || i == size || j == 1 || j == size) {
+
+                printf(“* “);
+
+            } else {
+
+                printf(”  “);
+
+            }
+
+        }
+
+        printf(“\n”);
+
+    }
+
+    return 0;
+
+}
+
+Output- 
+Enter the size of the square: 5
+
+* * * * *
+
+*        *
+
+*        *
+
+*        *
+
+* * * * *
+
+----------------------------------
+
+11. Floyd’s Triangle Pattern
+Floyd’s Triangle is a right-angled triangular array of natural numbers. It starts with 1 at the top left and increases sequentially row by row. This pattern is commonly used to test a programmer’s understanding of loops and sequences in programming. The basic step-by-step process of this pattern is written below for a better understanding of the concept:
+
+Ask the user to enter the number of rows.
+Use an outer loop to iterate through the rows.
+Use an inner loop to print numbers in each row.
+Use a counter to keep track of the current number.
+C Program For Pattern – Floyd’s Triangle Pattern
+#include <stdio.h>
+int main() {
+
+    int i, j, rows, num = 1;
+
+    // Ask the user to enter the number of rows
+
+    printf(“Enter the number of rows: “);
+
+    scanf(“%d”, &rows);
+
+    // Outer loop for each row
+
+    for (i = 1; i <= rows; ++i) {
+
+        // Inner loop for numbers in each row
+
+        for (j = 1; j <= i; ++j) {
+
+            printf(“%d “, num);
+
+            ++num; // Increment the number
+
+        }
+
+        printf(“\n”); // New line after each row
+
+    }
+
+    return 0;
+
+}
+
+Output- 
+Enter the number of rows: 5
+
+1 
+
+2 3 
+
+4 5 6 
+
+7 8 9 10 
+
+11 12 13 14 15 
+
+
+----------------------------------
+
+12. Pascal’s Triangle Pattern
+This program prints Pascal’s Triangle, a triangular array where each number is the sum of the two directly above it. The general process of printing this pattern is written below for your reference:
+
+Ask the user to enter the number of rows.
+Use an outer loop to iterate through the rows.
+Use an inner loop to print the appropriate number of spaces for alignment.
+Use another inner loop to calculate and print the binomial coefficients.
+C Program For Pattern – Pascal’s Triangle Pattern
+#include <stdio.h>
+// Function to calculate factorial of a number
+
+int factorial(int n) {
+
+    int fact = 1;
+
+    for (int i = 1; i <= n; ++i) {
+
+        fact *= i;
+
+    }
+
+    return fact;
+
+}
+
+int main() {
+
+    int i, j, rows
+
+    // Prompt user to enter the number of rows
+
+    printf(“Enter the number of rows: “);
+
+    scanf(“%d”, &rows);
+
+    // Outer loop for each row
+
+    for (i = 0; i < rows; ++i) {
+
+        // Print leading spaces for alignment
+
+        for (j = 0; j < rows – i – 1; ++j) {
+
+            printf(”  “);
+
+        }
+
+        // Inner loop to print binomial coefficients
+
+        for (j = 0; j <= i; ++j) {
+
+            printf(“%4d”, factorial(i) / (factorial(j) * factorial(i – j)));
+
+        }
+
+        printf(“\n”); // New line after each row
+
+    }
+
+    return 0;
+
+}
+
+Output- 
+Enter the number of rows: 5
+
+          1
+
+        1   1
+
+      1   2   1
+
+    1   3   3   1
+
+  1   4   6   4   1

@@ -1,0 +1,23 @@
+#include<stdio.h>
+void main()
+{
+   struct student
+   {
+      char sname[20];
+      int rollnum;
+      int marks;
+   };
+
+struct student s1;		//typedef struct student STUD;
+			//STUD s1;
+printf("\nEnter student name\t");
+scanf("%s",s1.sname);
+printf("\nEnter student rollnum\t");
+scanf("%d",&s1.rollnum);
+printf("\nEnter student marks\t");
+scanf("%d",&s1.marks);
+
+printf("\nStudent name\t%s",s1.sname);
+printf("\nStudent rollnum\t%d",s1.rollnum);
+printf("\nStudent marks\t%d",s1.marks);
+}

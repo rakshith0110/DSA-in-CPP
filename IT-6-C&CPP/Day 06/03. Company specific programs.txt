@@ -1,0 +1,497 @@
+07 Problem description
+
+Implement the following Function
+
+def ProductSmallestPair(sum, arr)
+
+The function accepts an integers sum and an integer array arr of size n. Implement the function to find the pair, (arr[j], arr[k]) where j!=k, Such that arr[j] and arr[k] are the least two elements of array (arr[j] + arr[k] <= sum) and return the product of element of this pair
+
+NOTE
+
+Return -1 if array is empty or if n<2
+Return 0, if no such pairs found
+All computed values lie within integer range
+Example
+
+Input
+sum:9
+size of Arr = 7
+Arr:5 2 4 3 9 7 1
+
+Output
+2
+
+Explanation
+
+Pair of least two element is (2, 1) 2 + 1 = 3 < 9, Product of (2, 1) 2*1 = 2. Thus, output is 2
+
+Sample Input
+
+sum:4
+size of Arr = 6
+Arr:9 8 3 -7 3 9
+
+Sample Output
+-21
+
+Solution:
+
+#include<stdio.h>
+int productSmallestPair (int *array, int n, int sum)
+{
+  int answer, temp, i, j, check;
+  if (n < 2)
+    {
+      answer = -1;
+    }
+  else
+    {
+      for (i = 0; i < n; i++)	//sorting of array
+	{
+	  for (j = i + 1; j < n; j++)
+	    {
+	      if (array[i] > array[j])
+		{
+		  temp = array[i];
+		  array[i] = array[j];
+		  array[j] = temp;
+		}
+	    }
+	}
+      check = array[0] + array[1];
+      if (check <= sum)
+	{
+	  answer = array[0] * array[1];
+	}
+      else
+	{
+	  answer = 0;
+	}
+    }
+  return answer;
+}
+int main ()
+{
+  int n, sum, result, i;
+  scanf ("%d", &sum);
+  scanf ("%d", &n);
+  int array[n];
+  for (i = 0; i < n; i++)
+    {
+      scanf ("%d", &array[i]);
+    }
+  result = productSmallestPair (array, n, sum);
+  printf ("%d", result);
+  return 0;
+}
+
+
+-----------------------
+
+Problem 8:
+
+N-base notation is a system for writing numbers that uses only n different symbols, This symbols are the first n symbols from the given notation list(Including the symbol for o) Decimal to n base notation are (0:0, 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:7, 8:8, 9:9, 10:A,11:B and so on upto 35:Z)
+
+Implement the following function
+
+Char* DectoNBase(int n, int num):
+
+The function accept positive integer n and num Implement the function to calculate the n-base equivalent of num and return the same as a string
+
+Steps:
+
+Divide the decimal number by n,Treat the division as the integer division
+Write the the remainder (in  n-base notation)
+Divide the quotient again by n, Treat the division as integer division
+Repeat step 2 and 3 until the quotient is 0
+The n-base value is the sequence of the remainders from last to first
+Assumption:
+1 < n < = 36
+
+Example
+
+Input
+n: 12
+num: 718
+
+Output
+4BA
+
+Explanation
+num       Divisor       quotient       remainder
+718           12               59          10(A)
+59            12                4          11(B)
+4             12                0          4(4)
+
+Sample Input
+n: 21
+num: 5678
+
+Sample Output
+CI8
+
+
+#include <stdio.h>
+
+char *decitoNBase (int n, int num)
+{
+  char *res = NULL;
+  int quotient = num / n;
+  int *rem = malloc (sizeof (int));
+  int remSize = 1;
+  rem[0] = num % n;
+
+  while (quotient != 0)
+    {
+      remSize++;
+      int *temp = realloc (rem, remSize * sizeof (int));
+      if (temp == NULL)
+	{
+	  free (rem);
+	  return NULL;
+	}
+      rem = temp;
+      rem[remSize - 1] = quotient % n;
+      quotient = quotient / n;
+    }
+
+  int resSize = remSize + 1;
+  res = malloc (resSize * sizeof (char));
+  if (res == NULL)
+    {
+      free (rem);
+      return NULL;
+    }
+
+  int i, j = 0;
+  for (i = remSize - 1; i >= 0; i--)
+    {
+      if (rem[i] > 9)
+	{
+	  res[j] = (char) (rem[i] - 9 + 64);
+	}
+      else
+	{
+	  res[j] = (char) (rem[i] + '0');
+	}
+      j++;
+    }
+  res[j] = '\0';
+
+  free (rem);
+  return res;
+}
+
+int main ()
+{
+  int n, num;
+  scanf ("%d %d", &n, &num);
+  char *result = decitoNBase (n, num);
+  printf ("%s\n", result);
+  free (result);
+  return 0;
+}
+
+
+-----------------------------------------
+09. Problem statement
+
+Implement the following functions.a
+
+char*MoveHyphen(char str[],int n);
+
+The function accepts a string “str” of length ‘n’, that contains alphabets and hyphens (-). Implement the function to move all hyphens(-) in the string to the front of the given string.
+
+NOTE:- Return null if str is null.
+
+Example :-
+
+Input:
+str.Move-Hyphens-to-Front
+Output:
+—MoveHyphenstoFront
+Explanation:-
+
+The string “Move-Hyphens -to-front” has 3 hyphens (-), which are moved to the front of the string, this output is “— MoveHyphen”
+
+Sample Input
+
+Str: String-Compare
+Sample Output-
+
+-StringCompare
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char * MoveHyphen (char *s, int n)
+{
+  int count = 0;
+  int i = 0;
+  while (i < n)
+    {
+      if (s[i] == '-')
+	{
+	  count++;
+	  memmove (&s[i], &s[i + 1], n - i);
+	  n--;
+	}
+      else
+	{
+	  i++;
+	}
+    }
+
+  char *res = malloc ((n + count + 1) * sizeof (char));
+  if (res == NULL)
+    {
+      return NULL;
+    }
+
+  for (i = 0; i < count; i++)
+    {
+      res[i] = '-';
+    }
+  for (i = count; i < count + n; i++)
+    {
+      res[i] = s[i - count];
+    }
+  res[count + n] = '\0';
+
+  return res;
+}
+
+int main ()
+{
+  char s[100];
+  scanf ("%s", s);
+  int n = strlen (s);
+  char *result = MoveHyphen (s, n);
+  printf ("%s\n", result);
+  free (result);
+  return 0;
+}
+
+------------------------------------
+
+10 Problem Statement
+
+A carry is a digit that is transferred to left if sum of digits exceeds 9 while adding two numbers from right-to-left one digit at a time
+
+You are required to implement the following function.
+
+Int NumberOfCarries(int num1 , int num2);
+
+The functions accepts two numbers ‘num1’ and ‘num2’ as its arguments. You are required to calculate and return  the total number of carries generated while adding digits of two numbers ‘num1’ and ‘ num2’.
+
+Assumption: num1, num2>=0
+
+Example:
+
+Input
+Num 1: 451
+Num 2: 349
+Output
+2
+Explanation:
+
+Adding ‘num 1’ and ‘num 2’ right-to-left results in 2 carries since ( 1+9) is 10. 1 is carried and (5+4=1) is 10, again 1 is carried. Hence 2 is returned.
+
+Sample Input
+Num 1: 23
+Num 2: 563
+
+Sample Output
+
+0
+
+#include<stdio.h>
+int numberOfCarries (int num1, int num2)
+{
+  int carry = 0, sum, p, q, count = 0;
+  while ((num1 != 0) && (num2 != 0))
+    {
+      p = num1 % 10;
+      q = num2 % 10;
+      sum = carry + p + q;
+      if (sum > 9)
+	{
+	  carry = 1;
+	  count++;
+	}
+      else
+	{
+	  carry = 0;
+	}
+      num1 = num1 / 10;
+      num2 = num2 / 10;
+    }
+  while (num1 != 0)
+    {
+      p = num1 % 10;
+      sum = carry + p;
+      if (sum > 9)
+	{
+	  carry = 1;
+	  count++;
+	}
+      else
+	carry = 0;
+      num1 = num1 / 10;
+    }
+  while (num2 != 0)
+    {
+      q = num2 % 10;
+      sum = carry + q;
+      if (sum > 9)
+	{
+	  carry = 1;
+	  count++;
+	}
+      else
+	carry = 0;
+      num2 = num2 / 10;
+    }
+  return count;
+}
+int main ()
+{
+  int x, y, a;
+  scanf ("%d", &x);
+  scanf ("%d", &y);
+  a = numberOfCarries (x, y);
+  printf ("%d", a);
+  return 0;
+}
+
+
+---------------------------------
+
+11. Problem Statement
+
+You are given a function,
+
+Void *ReplaceCharacter(Char str[], int n, char ch1, char ch2);
+
+The function accepts a string  ‘ str’ of length n and two characters ‘ch1’ and ‘ch2’ as its arguments . Implement the function to modify and return the string ‘ str’ in such a way that all occurrences of ‘ch1’ in original string are replaced by ‘ch2’ and all occurrences of ‘ch2’  in original string are replaced by ‘ch1’.
+
+Assumption: String Contains only lower-case alphabetical letters.
+
+Note:
+
+Return null if string is null.
+If both characters are not present in string or both of them are same , then return the string unchanged.
+Example:
+
+Input:
+Str: apples
+ch1:a
+ch2:p
+Output:
+paales
+Explanation:
+
+‘A’ in original string is replaced with ‘p’ and ‘p’ in original string is replaced with ‘a’, thus output is paales.
+
+
+#include<stdio.h>
+#include<string.h>
+void *ReplaceCharacter (char str[], int n, char ch1, char ch2)
+{
+  int i;
+  for (i = 0; i < n; i++)
+    {
+      if (str[i] == ch1)
+	{
+	  str[i] = ch2;
+	}
+      else if (str[i] == ch2)
+	{
+	  str[i] = ch1;
+	}
+    }
+  printf ("%s", str);
+}
+int main ()
+{
+  char a[100];
+  char b, c;
+  int len;
+  scanf ("%s", a);
+  scanf ("%s", &b);
+  scanf ("%s", &c);
+  len = strlen (a);
+  ReplaceCharacter (a, len, b, c);
+  return 0;
+}
+
+-----------------------------
+
+12. Problem Statement
+
+You are required to implement the following function.
+
+Int OperationChoices(int c, int n, int a , int b )
+
+The function accepts 3 positive integers ‘a’ , ‘b’ and ‘c ‘ as its arguments. Implement the function to return.
+
+( a+ b ) , if c=1
+( a – b ) , if c=2
+( a * b ) ,  if c=3
+(a / b) ,  if c =4
+Assumption : All operations will result in integer output.
+
+Example:
+
+Input
+c :1
+a:12
+b:16
+Output:
+Since ‘c’=1 , (12+16) is performed which is equal to 28 , hence 28 is returned.
+Sample Input
+
+ c : 2
+
+ a : 16
+
+ b : 20
+
+Sample Output
+
+-4
+
+#include<stdio.h>
+int operationChoices (int c, int a, int b)
+{
+  if (c == 1)
+    {
+      return a + b;
+    }
+  else if (c == 2)
+    {
+      return a - b;
+    }
+  else if (c == 3)
+    {
+      return a * b;
+    }
+  else if (c == 4)
+    {
+      return a / b;
+    }
+}
+int main ()
+{
+  int x, y, z;
+  int result;
+  scanf ("%d", &x);
+  scanf ("%d", &y);
+  scanf ("%d", &z);
+  result = operationChoices (x, y, z);
+  printf ("%d", result);
+  return 0;
+}
+
+--------------------------

@@ -1,0 +1,64 @@
+#include<iostream>
+using namespace std;
+
+class Base
+{
+    public:
+     virtual void show() = 0;           //pure virtual function
+        
+};
+
+class Derv1: public Base
+{
+    public:
+        void show()
+        {
+            cout<<"Derived 1\n";
+        }
+};
+
+class Derv2: public Base
+{
+    public:
+        void show()
+        {
+            cout<<"Derived 2\n";
+        }
+};
+
+int main()
+{
+    //Base b1;      //Cannot create objects of abstract class
+    //b1.show();    //cannot access member functions.
+   
+    Derv1 dv1;      //object for class Derv1
+    Derv2 dv2;      //object for class Derv2
+    
+    Base *ptr;      //Pointer to Base class
+    
+    ptr = &dv1;     //Address of first class object
+    ptr->show();
+    
+    ptr = &dv2;     //Address of second class object
+    ptr->show();
+    
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

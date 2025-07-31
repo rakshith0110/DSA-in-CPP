@@ -1,0 +1,116 @@
+Q1:
+class Test {
+    public static void main(String[] args) {
+        String s1 = "hello";
+        String s2 = new String("hello");
+        System.out.print(s1 == s2);
+    }
+}
+A. true
+B. false
+C. Error
+D. hello
+
+Q2
+class Test {
+    public static void main(String[] args) {
+        int x = 5;
+        x += x++ + ++x;
+        System.out.print(x);
+    }
+}
+A. 16
+B. 15
+C. 14
+D. 17
+
+Q3:
+class A {
+    int i = 10;
+}
+class B extends A {
+    int i = 20;
+}
+class Test {
+    public static void main(String[] args) {
+        A a = new B();
+        System.out.print(a.i);
+    }
+}
+A. 10			B. 20
+C. Compile error	D. Runtime error
+
+Q4:
+What is true about final methods?
+A. They cannot be overridden
+B. They can be abstract
+C. They must be static
+D. They must return void
+
+
+Q5:
+class Test {
+    public static void main(String[] args) {
+        String s = "abc";
+        s.concat("def");
+        System.out.print(s);
+    }
+}
+A. abc
+B. abcdef
+C. def
+D. Null
+
+
+Q6: Which collection maintains insertion order?
+A. HashSet
+B. TreeSet
+C. LinkedHashSet
+D. PriorityQueue
+
+
+Q7:
+class Test {
+    public static void main(String[] args) {
+        try {
+            int a = 10/0;
+        } catch (ArithmeticException e) {
+            System.out.print("A");
+        } catch (Exception e) {
+            System.out.print("B");
+        }
+    }
+}
+A. A		B. B
+C. AB		D. Compile error
+
+
+Q8:
+Which keyword is used to access superclass method?
+A. super
+B. base
+C. parent
+D. static
+
+
+Q9:
+Which of these is not a valid interface feature?
+A. All methods are abstract
+B. Can contain static methods
+C. Can have private methods
+D. Can extend a class
+
+
+Q10:
+class Test {
+    static {
+        System.out.print("Static block ");
+    }
+    public static void main(String[] args) {
+        System.out.print("Main method");
+    }
+}
+A. Main method Static block
+B. Static block Main method
+C. Compile error
+D. Main method

@@ -1,0 +1,61 @@
+Q 1. Why is C called a mid-level programming language?
+Q 2. What are the features of the C programming language?
+Q 3. What are basic data types supported in the C Programming
+Language?
+Q 4. What are tokens in C?
+Q 5. What do you mean by the scope of the variable?
+Q 6. What are preprocessor directives in C?
+Q 7. What is the use of static variables in C?
+Q 8. What is the difference between malloc() and calloc() in the C
+programming language?
+Q 9. What do you mean by dangling pointers and how are dangling
+pointers different from memory leaks in C programming?
+Q 10. Write a program to convert a number to a string with the help of sprintf() function in the C library.
+Q 11. What is recursion in C?
+Q 12. What is the difference between the local and global variables
+in C?
+Q 13. What are pointers and their uses?
+Q 14. What is typedef in C?
+Q 15. What are loops and how can we create an infinite loop in C?
+Q 16. What is the difference between type casting and type
+conversion?
+Q 17. What are header files and their uses?
+Q 18. What are the functions and their types?
+Q 19. What is the difference between macro and functions?
+Q 20. How to convert a string to numbers in C?
+Q 21. What are reserved keywords?
+Q 22. What is a structure?
+Q 23. What is union?
+24. What is an r-value and l -value?
+Q 25. What is the difference between call by value and call by
+reference?
+Q 26. What is the sleep() function?
+Q 27. What are enumerations?
+Q 28: What is a volatile keyword?
+Q 29. Write a C program to print the Fibonacci series using
+recursion and without using recursion.
+Q 30. Write a C program to check whether a number is prime or not.
+Q 31. How is source code different from object code?
+Q 32. What is static memory allocation and dynamic memory
+allocation?
+Q 33. What is pass-by-reference in functions?
+Q 34. What is a memory leak and how to avoid it?
+Q 35. What are command line arguments?
+Q 36. What is an auto keyword?
+Q 37 . Write a program to print “Hello-World” without using a
+semicolon.
+Q 38. Write a C program to swap two numbers without using a
+third variable.
+Q 39. Write a program to check whether a string is a palindrome or not.
+Q 40. Explain modifiers.
+Q 41. Write a program to print the factorial of a given number with the help of recursion.
+Q 42. Write a program to check an Armstrong number.
+Q 43. Write a program to reverse a given number.
+Q 44. What is the use of an extern storage specifier?
+Q 45. What is the use of printf() and scanf() functions in C
+Programming language? Also, explain format specifiers.
+Q 46. What is near, far, and huge pointers in C?
+Q 47. Mention file operations in C.
+Q 48. Write a Program to check whether a linked list is circular or not.
+Q 49 . Write a program to Merge two sorted linked lists.
+50. What is the difference between getc(), getchar(), getch() and getche().

@@ -1,0 +1,43 @@
+#include <stdio.h>
+void Addval(int *studentmarks);
+
+int main()
+{
+    int i;
+    int marks[5];
+    
+    printf("\nEnter the marks :\n");
+    for(i=0;i<5;i++)
+        scanf("\n%d",&marks[i]);   
+    
+     printf("\nMarks entered are :");
+     for(i=0;i<5;i++)
+        printf("\n%d",marks[i]);
+
+    Addval(marks);
+
+//After calling the function
+
+    printf("\nAfter adding 10 :");
+    for(i=0;i<5;i++)
+        printf("\n%d",marks[i]);
+        
+    return 0;
+}
+
+void Addval(int *studentmarks)
+{
+    int i;
+    for(i=0;i<5;i++)
+    {
+    *studentmarks = *studentmarks + 10;	//Add 10 to each value.
+    *studentmarks ++;
+    }
+}
+
+marks		*studentmarks - &marks[0]
+0 -1700 - 20		1700	20 + 10	*studentmarks++
+1 -1702 - 30		1702	30 + 10
+2 -1704 - 40		1704	40 + 10
+3 -1706 - 50
+4 -1708 - 60

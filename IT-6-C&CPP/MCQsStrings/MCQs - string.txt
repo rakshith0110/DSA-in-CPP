@@ -1,0 +1,165 @@
+Q1. What will be the output of the program ?
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char str1[20] = "Hello", str2[20] = " World";
+    printf("%s\n", strcpy(str2, strcat(str1, str2)));
+    return 0;
+}
+a. Hello
+b. World
+c. Hello World --
+d. WorldHello
+
+
+
+Q2. What will be the output of the program ?
+#include<stdio.h>
+
+int main()
+{
+    char p[] = "%d\n";
+    p[1] = 'c';
+    printf(p, 65);
+    return 0;
+}
+a. A
+b. a
+c. c
+d. 65
+
+
+Q3. What will be the output of the program ?
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    printf("%d\n", strlen("123456"));
+    return 0;
+}
+a. 6
+b. 12
+c. 7
+d. 2
+
+
+Q4. What will be the output of the program ?
+#include<stdio.h>
+
+int main()
+{
+    printf(5+"Good Morning\n");
+    return 0;
+}
+a. Good Morning
+b. Good
+c. M
+d. Morning
+
+
+Q5. What will be the output of the program ?
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char str[] = "Compsci\0\Bits\0";
+    printf("%s\n", str);
+    return 0;
+}
+a. Bits
+b. Compsci
+c. Compsci Bits
+d. Compsci\0Bits
+
+
+
+Q6. What will be the output of the program If characters 'a', 'b' and 'c' enter are supplied as input?
+#include<stdio.h>
+int main()
+{
+    void fun();
+    fun();
+    printf("\n");
+    return 0;
+}
+void fun()
+{
+    char c;
+    if((c = getchar())!= '\n')
+        fun();
+    printf("%c", c);
+}
+a. abc abc
+b. bca
+c. Infinite loop
+d. cba
+
+
+Q7. What will be the output of the program ?
+#include<stdio.h>
+
+int main()
+{
+    printf("Compsci", "Bits\n");
+    return 0;
+}
+a. Error
+b. Compsci Bits
+c. Compsci
+d. Bits
+
+
+Q8. What will be the output of the program ?
+#include<stdio.h>
+
+int main()
+{
+    char str[7] = "CompsciBits";
+    printf("%s\n", str);
+    return 0;
+}
+a. Error
+b. CompsciBits
+c. Cannot predict
+d. None of above
+
+
+Q9. What will be the output of the program ?
+#include<stdio.h>
+
+int main()
+{
+    char *names[] = { "Suresh", "Siva", "Sona", "Baiju", "Ritu"};
+    int i;
+    char *t;
+    t = names[3];
+    names[3] = names[4];
+    names[4] = t;
+    for(i=0; i<=4; i++)
+        printf("%s,", names[i]);
+    return 0;
+}
+a. Suresh, Siva, Sona, Baiju, Ritu
+b. Suresh, Siva, Sona, Ritu, Baiju
+c. Suresh, Siva, Baiju, Sona, Ritu
+d. Suresh, Siva, Ritu, Sona, Baiju
+
+
+Q10. What will be the output of the program ?
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+    char str[] = "India\0\BIX\0";
+    printf("%d\n", strlen(str));
+    return 0;
+}
+a. 10
+b. 6
+c. 5
+d. 11

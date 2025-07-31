@@ -1,0 +1,23 @@
+//Write output to a file
+#include<fstream>
+#include<iostream>
+#include<string>
+
+using namespace std;
+
+int main()
+{
+    char ch = 'x';
+    int j=77;
+    double d = 6.02;
+    
+    string str1 = "Mumbai";
+    string str2 = "City";
+    
+    ofstream outfile("fdata.txt");
+    
+    outfile<<ch<<' '<<j<<' '<<d<<' '<<str1<<' '<<str2;
+    cout<<"File wirtten "<<endl;
+    
+    return 0;
+}

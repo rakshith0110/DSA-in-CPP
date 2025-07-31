@@ -1,0 +1,26 @@
+//static class data
+#include<iostream>
+using namespace std;
+class SData
+{
+private:	
+	static int count;
+public:
+	SData()
+	{
+		count++;
+	}
+	int getcount()
+	{
+		return count;
+	}
+};
+int SData::count=0;
+int main()
+{
+	SData s1, s2, s3;
+	cout << "count is "<<s1.getcount()<<endl;
+	cout << "count is "<<s2.getcount()<<endl;
+	cout << "count is "<<s3.getcount()<<endl;
+return 0;
+}

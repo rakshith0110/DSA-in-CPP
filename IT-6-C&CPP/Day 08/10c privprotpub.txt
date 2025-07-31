@@ -1,0 +1,63 @@
+//Access combination
+
+class A			//Base class
+{
+	private:
+		int privDataA;
+	protected:
+		int proDataA;
+	public:
+		int pubDataA;
+};
+
+class B: public A		//publicly derived class
+{
+	public:
+	void funct()
+	{
+		int a;
+		a = privDataA;		//error
+		a = proDataA;
+		a = pubDataA;
+	}
+};
+
+class C: private A		//privately derived class
+{
+	public:
+	void funct()
+	{
+		int a;
+		a = privDataA;		//error
+		a = proDataA;
+		a = pubDataA;
+	}
+};
+
+int main()
+{
+	int a;
+	B objB;
+	a = objB.privDataA;			//error
+	a = objB.proDataA;			//error
+	a = objB.pubDataA;			//ok
+
+	C objC;
+	a = objC.privDataA;			//error
+	a = objC.proDataA;			//error
+	a = objC.pubDataA;			//error
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+

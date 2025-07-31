@@ -1,0 +1,28 @@
+// structures and memory allocation
+#include <stdio.h>
+#include <stdlib.h>  	//dynamic memory allocation malloc,calloc
+// Structure Defination
+struct student 
+{
+    int roll_no;	//4
+    int marks;		//4
+};
+  
+int main()
+{
+    struct student *p; 
+    p = (struct student*) malloc(sizeof(struct student));
+
+     p->roll_no = 55;
+     p->marks = 75;
+  
+    printf("The value at roll number is %d\n", p->roll_no);
+    printf("The value at marks is %d\n", p->marks); 
+    return 0;
+}
+
+
+
+
+
+
